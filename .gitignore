@@ -1,0 +1,5 @@
+# ignore all .Exe files
+*.exe
+
+# ignore all .in files
+*.in
