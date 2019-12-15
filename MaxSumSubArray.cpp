@@ -8,8 +8,15 @@ using namespace std;
 	Trivial approach :- 
 	Find each and every subarray [i..j] and compute its sum
 	get largest subarray whose sum is maximum
+	TIme complexity - O(N^2),Space Complexity - O(1)
 	
-
+	Optimized approach :-
+	suppose there is a subarray from [i..j]
+	sum(i..j) = sum([i..k]) + sum([k+1..j])
+	if sum(i..k) < 0 :
+		then we can ignore the subarray from i..k
+		as it will reduce our total sum of (i..j)
+	Time complexity - O(N^2),Space complexity - O(1)
 */
 
 class Solution
@@ -42,6 +49,41 @@ public:
 			}
 		}
 		return {largest_sum,st};
+	}
+
+	pair<int,int> sumSubArray()
+	{
+		int maxr = INT_MIN;
+		for(auto it:arr)
+		{
+			maxr = max(maxr,it);
+		}
+		if(maxr < 0)
+		{
+			return maxr;
+		}
+		int sum = 0;
+		int largest_sum = 0;
+		int st = 0;
+		for(int i=0;i<arr.size();i++)
+		{
+			sum += arr[i];
+			if(sum < 0)
+			{
+				sum = arr[i];
+				if(sum < 0)
+				{
+					sum = 0;
+				}
+				st = i;
+			}
+			if(sum > largest_sum)
+			{
+				largest_sum = sum;
+				st = i;
+			}
+		}
+		return largest_sum;
 	}
 };
 
