@@ -3,3 +3,6 @@
 
 # ignore all .in files
 *.in
+
+# boilerplate.cpp
+boilerplate.cpp
