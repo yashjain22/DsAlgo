@@ -51,7 +51,7 @@ public:
 		return {largest_sum,st};
 	}
 
-	pair<int,int> sumSubArray()
+	int sumSubArray()
 	{
 		int maxr = INT_MIN;
 		for(auto it:arr)
@@ -102,8 +102,7 @@ int main()
 			cin >> temp;
 			s.fillArray(temp);
 		}
-		auto it =  s.sumSubArray_trivial();
-		cout << it.first << " " << it.second << endl;
+		cout << s.sumSubArray() << endl;
 	}
 }
 
