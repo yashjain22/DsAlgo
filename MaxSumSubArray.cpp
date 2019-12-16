@@ -16,7 +16,7 @@ using namespace std;
 	if sum(i..k) < 0 :
 		then we can ignore the subarray from i..k
 		as it will reduce our total sum of (i..j)
-	Time complexity - O(N^2),Space complexity - O(1)
+	Time complexity - O(N),Space complexity - O(1)
 */
 
 class Solution
