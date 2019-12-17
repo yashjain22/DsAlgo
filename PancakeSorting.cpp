@@ -58,17 +58,27 @@ public:
 
 	vector<int> pancakeSort()
 	{
+		vector<int> temp;
 		int n = arr.size() - 1;
 		while (n >= 0)
 		{
 			int idx = findMaxIndex(n);
+			if(n!=idx)
+			{
+				temp.push_back(idx+1);
+			}
 			flipOperation(idx + 1);
 			flipOperation(n + 1);
+			if(n!=idx)
+			{
+				temp.push_back(n+1);
+			}
 			n--;
 		}
+		return temp;
 	}
 
-	void printArray()
+	void printArray(vector<int>& arr)
 	{
 		for(auto it:arr)
 		{
@@ -93,8 +103,8 @@ int main()
 			cin >> temp;
 			s.fillArray(temp);
 		}
-		s.pancakeSort();
-		s.printArray();
+		vector<int> temp = s.pancakeSort();
+		s.printArray(temp);
 	}
 }
 
