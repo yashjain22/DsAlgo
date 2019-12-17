@@ -2,10 +2,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 /*
-All distinct combinations of given length k
+All distinct combinations of given length k With/Without repetition
+Backtracking approach and the code is self-explanatory
+If u still don't get it then use some combinatorics logic
+select 1st item from n items
+select 2nd item from n-1 items
+... so until either you exhaust your list of items or the number of items you want to
+select is compeleted.In both of these cases you'll stop.
+So here you'll just try each and every combination
 
-
-
+O(N*(N-1)*(N-2)*(N-3)*.....(N-K+1))
+Recursion stack will take O(K) space.
 */
 class Solution
 {
