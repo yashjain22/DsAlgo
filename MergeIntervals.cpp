@@ -5,6 +5,7 @@ using namespace std;
 Approach - sort the intervals by their starting points so that upto
 [0...x],where x>=0 has no overlapping interval and the next interval could
 either be overlap,partially-overlap or totally Non-overlapping.
+Time complexity - O(N), SpaceComplexity - O(N)
 */
 bool comparator(pair<int,int> first_interval,pair<int,int> second_interval)
 {
