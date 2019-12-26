@@ -4,8 +4,13 @@ using namespace std;
 #define ll long long
 
 /*
- 0 1 1
-	6/2 = 3/2 = 1 /2 = 0
+	Google Kickstart round-G Equation (20pts)
+	Solution runs in Time O(N*log(max(Ai)))
+	and takes space O(N)
+	Code is bit tedious and hard to understand.
+	In day or two,will write a cleaner version of this code
+	and with detailed explanation.(also why i preferred bitset).
+
 */
 class Solution
 {
@@ -81,7 +86,7 @@ public:
 			min_sum[j + 1] = min_sum[j] + pow(2, j) * min(count_ones, count_zero);
 		}
 
-		bitset<64> k(0);
+		bitset<64> ans(0);
 		for (int j = 59; j >= 0; j--)
 		{
 			int count_zero = 0;
@@ -99,12 +104,11 @@ public:
 			}
 			if (count_zero <= count_ones)
 			{
-				//ans += pow(2, j);
-				k.set(j);
+				ans.set(j);
 				m -= pow(2, j) * count_zero;
 				if (m < 0)
 				{
-					return { -1, k};
+					return { -1, ans};
 				}
 			}
 			else
@@ -112,24 +116,23 @@ public:
 				if (m - pow(2, j)*count_zero >= min_sum[j])
 				{
 					m -= pow(2, j) * count_zero;
-					//ans += pow(2, j);
-					k.set(j);
+					ans.set(j);
 				}
 				else
 				{
 					m -= pow(2, j) * count_ones;
 					if (m < 0)
 					{
-						return { -1, k};
+						return { -1, ans};
 					}
 				}
 			}
 		}
 		if (m < 0)
 		{
-			return { -1, k};
+			return { -1, ans};
 		}
-		return {0, k};
+		return {0, ans};
 	}
 
 };
