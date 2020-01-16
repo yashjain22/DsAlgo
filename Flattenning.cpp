@@ -1,6 +1,9 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+/*
+Google kickstart Round-F 2019 Problem A FLattening solution By DP
+*/
 
 /*
 Problem resolves to making =<K equal subarrays
