@@ -9,9 +9,7 @@
 	because "01" or "0" is not a valid string
 */
 /*
-	Lets discuss both the approaches
-	Top-down and Bottom-Up
-
+	Lets discuss the top-down approach
 	Cases :-
 	1. 07 // leading zero
 	2. 00 // multilpe zeroes
@@ -26,7 +24,9 @@
 	1. What would be our base case ?
 		if we have completely exhausted the string then we sure know that it is a 
 		valid string to be decoded.
-	2. 
+	2.  Leading Zeroes cases
+	3.  Trailing zero cases
+	4. Valid string (two cases) a. >26 and <26
  */
 #include<iostream>
 #include<bits/stdc++.h>
